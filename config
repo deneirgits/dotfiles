@@ -178,7 +178,7 @@ bindsym $mod+r mode "resize"
 set $bg-color 	         #00000000
 set $inactive-bg-color   #00000000
 set $text-color          #ffffff
-set $inactive-text-color #505050
+set $inactive-text-color #7A7A7A
 set $urgent-bg-color     #E53935
 
 # window colors
@@ -226,7 +226,7 @@ exec --no-startup-id "i3-msg 'workspace 1: ; append_layout /home/deneir-uy/.c
 
 
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
-bindsym Print exec screenshot
+bindsym Print exec --no-startup-id exec gnome-screenshot
 
 exec --no-startup-id exec xfce4-terminal --role terminal1
 exec --no-startup-id exec xfce4-terminal --role terminal2
@@ -240,7 +240,7 @@ exec --no-startup-id exec uget-gtk
 exec --no-startup-id exec subl
 
 exec_always --no-startup-id exec compton --config ~/.config/compton.conf -b
-exec_always --no-startup-id exec feh --bg-scale /home/deneir-uy/Pictures/wallpaper.jpg
+exec_always --no-startup-id exec feh --bg-scale /home/deneir-uy/Pictures/wallpaper.*
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume

@@ -33,7 +33,7 @@
                        // "instance": "^xfce4\\-terminal$",
                        // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
                        // "transient_for": "^$",
-                       // "window_role": "^xfce4\\-terminal\\-1475393343\\-\\-1216108102$"
+                        "window_role": "^terminal1$"
                        }
                     ],
                     "type": "con"
@@ -56,7 +56,7 @@
                        // "instance": "^xfce4\\-terminal$",
                        // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
                        // "transient_for": "^$",
-                       // "window_role": "^xfce4\\-terminal\\-1475393343\\-1906412060$"
+                        "window_role": "^terminal2$"
                        }
                     ],
                     "type": "con"
@@ -81,7 +81,7 @@
                // "instance": "^xfce4\\-terminal$",
                // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
                // "transient_for": "^$",
-               // "window_role": "^xfce4\\-terminal\\-1475393343\\-\\-975102287$"
+                "window_role": "^terminal3$"
                }
             ],
             "type": "con"
@@ -104,7 +104,7 @@
                // "instance": "^xfce4\\-terminal$",
                // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
                // "transient_for": "^$",
-               // "window_role": "^xfce4\\-terminal\\-1475393546\\-1141055529$"
+                "window_role": "^terminal4$"
                }
             ],
             "type": "con"
@@ -130,7 +130,7 @@
        // "instance": "^xfce4\\-terminal$",
        // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
        // "transient_for": "^$",
-       // "window_role": "^xfce4\\-terminal\\-1475393342\\-\\-1066627590$"
+        "window_role": "^terminal5$"
        }
     ],
     "type": "con"

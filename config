@@ -134,6 +134,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="google-chrome"] $workspace2
 assign [class="Sublime_text"] $workspace3
 assign [class="NetBeans IDE 8.1"] $workspace3
+assign [class="jetbrains-idea"] $workspace3
 assign [class="Slack"] $workspace4
 assign [class="Nautilus"] $workspace4
 assign [class="Uget-gtk"] $workspace4
@@ -231,13 +232,14 @@ bindsym Print exec --no-startup-id exec gnome-screenshot
 exec --no-startup-id exec xfce4-terminal --role terminal1
 exec --no-startup-id exec xfce4-terminal --role terminal2
 exec --no-startup-id exec xfce4-terminal --role terminal3
+exec --no-startup-id exec xfce4-terminal --role terminal4
+exec --no-startup-id exec xfce4-terminal --role terminal5
+exec --no-startup-id exec xfce4-terminal --role terminal6
 exec --no-startup-id exec google-chrome
 exec --no-startup-id exec spotify
-exec --no-startup-id exec geary
 exec --no-startup-id exec nautilus
 exec --no-startup-id exec slack
-exec --no-startup-id exec uget-gtk
-exec --no-startup-id exec subl
+exec --no-startup-id exec uget
 
 exec_always --no-startup-id exec compton --config ~/.config/compton.conf -b
 exec_always --no-startup-id exec feh --bg-scale /home/deneir-uy/Pictures/wallpaper.*

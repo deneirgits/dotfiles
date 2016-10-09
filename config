@@ -138,6 +138,7 @@ assign [class="jetbrains-idea"] $workspace3
 assign [class="Slack"] $workspace4
 assign [class="Nautilus"] $workspace4
 assign [class="vlc"] $workspace9
+assign [class="Uget-gtk"] $workspace4
 for_window [class="Spotify"] move to workspace $workspace10
 
 # reload the configuration file
@@ -236,7 +237,7 @@ exec --no-startup-id exec google-chrome
 exec --no-startup-id exec spotify
 exec --no-startup-id exec nautilus
 exec --no-startup-id exec slack
-exec --no-startup-id exec uget
+#exec --no-startup-id exec uget
 
 exec_always --no-startup-id exec compton --config ~/.config/compton.conf -b
 exec_always --no-startup-id exec feh --bg-scale /home/deneir-uy/Pictures/wallpaper.*
@@ -251,7 +252,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause

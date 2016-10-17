@@ -226,8 +226,8 @@ exec --no-startup-id i3-msg 'workspace 1: ; append_layout /home/deneir-uy/.co
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 bindsym Print exec --no-startup-id exec gnome-screenshot
 
-exec --no-startup-id exec xfce4-terminal --role terminal1 -e "/bin/bash -c 'cmatrix -C cyan; exec /bin/bash -i'"
-exec --no-startup-id exec xfce4-terminal --role terminal2 -e "/bin/bash -c 'toilet --filter border --gay Mabil; exec /bin/bash -i'"
+#exec --no-startup-id exec xfce4-terminal --role terminal1 -e "/bin/bash -c 'cmatrix -C cyan; exec /bin/bash -i'"
+exec --no-startup-id exec xfce4-terminal --role terminal2 -e "/bin/bash -c 'top; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal3 -e "/bin/bash -c 'screenfetch; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal4
 exec --no-startup-id exec xfce4-terminal --role terminal5

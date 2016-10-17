@@ -8,60 +8,27 @@
     "type": "con",
     "nodes": [
         {
-            // splith split container with 2 children
             "border": "none",
+            "current_border_width": 0,
             "floating": "auto_off",
-            "layout": "splith",
-            "percent": 0.383333333333333,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "none",
-                    "current_border_width": 0,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 314,
-                       "width": 562,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "Terminal - deneir-uy@binyiruyax: ~",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                       // "class": "^Xfce4\\-terminal$",
-                       // "instance": "^xfce4\\-terminal$",
-                       // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
-                       // "transient_for": "^$",
-                        "window_role": "^terminal1$"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "none",
-                    "current_border_width": 0,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 314,
-                       "width": 562,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "Terminal - deneir-uy@binyiruyax: ~",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                       // "class": "^Xfce4\\-terminal$",
-                       // "instance": "^xfce4\\-terminal$",
-                       // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
-                       // "transient_for": "^$",
-                        "window_role": "^terminal2$"
-                       }
-                    ],
-                    "type": "con"
-                }
-            ]
+            "geometry": {
+               "height": 314,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Terminal - deneir-uy@binyiruyax: ~",
+            "percent": 0.350877192982456,
+            "swallows": [
+               {
+               // "class": "^Xfce4\\-terminal$",
+               // "instance": "^xfce4\\-terminal$",
+               // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
+               // "transient_for": "^$",
+                "window_role": "^terminal2$"
+               }
+            ],
+            "type": "con"
         },
         {
             "border": "none",
@@ -74,7 +41,7 @@
                "y": 0
             },
             "name": "Terminal - deneir-uy@binyiruyax: ~",
-            "percent": 0.383333333333333,
+            "percent": 0.403508771929825,
             "swallows": [
                {
                // "class": "^Xfce4\\-terminal$",
@@ -96,13 +63,13 @@
                "x": 0,
                "y": 0
             },
-            "name": "Terminal - deneir-uy@binyiruyax: ~",
-            "percent": 0.233333333333333,
+            "name": "Terminal - cava",
+            "percent": 0.245614035087719,
             "swallows": [
                {
                // "class": "^Xfce4\\-terminal$",
                // "instance": "^xfce4\\-terminal$",
-               // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
+               // "title": "^Terminal\\ \\-\\ cava$",
                // "transient_for": "^$",
                 "window_role": "^terminal4$"
                }
@@ -130,13 +97,13 @@
                "x": 0,
                "y": 0
             },
-            "name": "Terminal - root@binyiruyax: /home/deneir-uy/git-repos/i3-dotfiles",
+            "name": "Terminal - deneir-uy@binyiruyax: ~",
             "percent": 0.5,
             "swallows": [
                {
                // "class": "^Xfce4\\-terminal$",
                // "instance": "^xfce4\\-terminal$",
-               // "title": "^Terminal\\ \\-\\ root\\@binyiruyax\\:\\ \\/home\\/deneir\\-uy\\/git\\-repos\\/i3\\-dotfiles$",
+               // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
                // "transient_for": "^$",
                 "window_role": "^terminal5$"
                }

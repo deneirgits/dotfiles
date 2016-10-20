@@ -228,7 +228,7 @@ bindsym Print exec --no-startup-id exec gnome-screenshot
 
 #exec --no-startup-id exec xfce4-terminal --role terminal1 -e "/bin/bash -c 'cmatrix -C cyan; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal2 -e "/bin/bash -c 'top; exec /bin/bash -i'"
-exec --no-startup-id exec xfce4-terminal --role terminal3 -e "/bin/bash -c 'screenfetch; exec /bin/bash -i'"
+exec --no-startup-id exec xfce4-terminal --role terminal3 -e "/bin/bash -c 'screenfetch -D \"Arch\"; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal4
 exec --no-startup-id exec xfce4-terminal --role terminal5
 exec --no-startup-id exec xfce4-terminal --role terminal6

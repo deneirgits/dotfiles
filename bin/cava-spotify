@@ -2,7 +2,7 @@
 
 #i3-msg "workspace 10: ; append_layout ~/.config/i3/workspace-3.json"
 spotify &
-sleep 5
+sleep 20
 SPLITV="layout splitv"
 i3-msg $SPLITV 
 sleep 5

@@ -141,6 +141,7 @@ assign [class="NetBeans IDE 8.1"] $workspace5
 assign [class="jetbrains-idea"] $workspace5
 assign [class="vlc"] $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
+for_window [window_role="terminal6"] move to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -223,18 +224,19 @@ bar {
 
 exec --no-startup-id i3-msg 'workspace 3: ; append_layout /home/deneir-uy/.config/i3/workspace-1.json;'
 exec --no-startup-id i3-msg 'workspace 1: ; append_layout /home/deneir-uy/.config/i3/workspace-2.json'
+exec --no-startup-id /bin/cava-spotify
 
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 bindsym Print exec --no-startup-id exec gnome-screenshot
 
-#exec --no-startup-id exec xfce4-terminal --role terminal1 -e "/bin/bash -c 'cmatrix -C cyan; exec /bin/bash -i'"
-exec --no-startup-id exec xfce4-terminal --role terminal2 -e "/bin/bash -c 'top; exec /bin/bash -i'"
+exec --no-startup-id exec xfce4-terminal --role terminal1 -e "/bin/bash -c 'top; exec /bin/bash -i'"
+exec --no-startup-id exec xfce4-terminal --role terminal2 -e "/bin/bash -c 'sudo nethogs; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal3 -e "/bin/bash -c 'screenfetch; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal4
 exec --no-startup-id exec xfce4-terminal --role terminal5
-exec --no-startup-id exec xfce4-terminal --role terminal6
+#exec --no-startup-id exec xfce4-terminal --role terminal6 -e "/bin/bash -c 'cava; exec /bin/bash -i'"
 exec --no-startup-id exec google-chrome
-exec --no-startup-id exec spotify
+#exec --no-startup-id exec spotify --role Spotify
 exec --no-startup-id exec nautilus
 exec --no-startup-id exec slack
 #exec --no-startup-id exec uget

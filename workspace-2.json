@@ -1,6 +1,6 @@
 // vim:ts=4:sw=4:et
 {
-    // splitv split container with 3 children
+    // splitv split container with 2 children
     "border": "none",
     "floating": "auto_off",
     "layout": "splitv",
@@ -17,64 +17,74 @@
                "x": 0,
                "y": 0
             },
-            "name": "Terminal - deneir-uy@binyiruyax: ~",
-            "percent": 0.350877192982456,
+            "name": "Terminal",
+            "percent": 0.365116279069767,
             "swallows": [
                {
                // "class": "^Xfce4\\-terminal$",
                // "instance": "^xfce4\\-terminal$",
-               // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
+               // "title": "^Terminal$",
                // "transient_for": "^$",
-                "window_role": "^terminal2$"
+               "window_role": "^terminal1$"
                }
             ],
             "type": "con"
         },
         {
+            // splitv split container with 2 children
             "border": "none",
-            "current_border_width": 0,
             "floating": "auto_off",
-            "geometry": {
-               "height": 314,
-               "width": 562,
-               "x": 0,
-               "y": 0
-            },
-            "name": "Terminal - deneir-uy@binyiruyax: ~",
-            "percent": 0.403508771929825,
-            "swallows": [
-               {
-               // "class": "^Xfce4\\-terminal$",
-               // "instance": "^xfce4\\-terminal$",
-               // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
-               // "transient_for": "^$",
-                "window_role": "^terminal3$"
-               }
-            ],
-            "type": "con"
-        },
-        {
-            "border": "none",
-            "current_border_width": 0,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 314,
-               "width": 562,
-               "x": 0,
-               "y": 0
-            },
-            "name": "Terminal - cava",
-            "percent": 0.245614035087719,
-            "swallows": [
-               {
-               // "class": "^Xfce4\\-terminal$",
-               // "instance": "^xfce4\\-terminal$",
-               // "title": "^Terminal\\ \\-\\ cava$",
-               // "transient_for": "^$",
-                "window_role": "^terminal4$"
-               }
-            ],
-            "type": "con"
+            "layout": "splitv",
+            "percent": 0.634883720930233,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "none",
+                    "current_border_width": 0,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 314,
+                       "width": 562,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Terminal - deneir-uy@binyiruyax: ~",
+                    "percent": 0.4,
+                    "swallows": [
+                       {
+                       // "class": "^Xfce4\\-terminal$",
+                       // "instance": "^xfce4\\-terminal$",
+                       // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
+                       // "transient_for": "^$",
+                       "window_role": "^terminal2$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "none",
+                    "current_border_width": 0,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 314,
+                       "width": 562,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Terminal - deneir-uy@binyiruyax: ~",
+                    "percent": 0.6,
+                    "swallows": [
+                       {
+                       // "class": "^Xfce4\\-terminal$",
+                       // "instance": "^xfce4\\-terminal$",
+                       // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
+                       // "transient_for": "^$",
+                       "window_role": "^terminal3$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
         }
     ]
 }
@@ -105,7 +115,7 @@
                // "instance": "^xfce4\\-terminal$",
                // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
                // "transient_for": "^$",
-                "window_role": "^terminal5$"
+               "window_role": "^terminal4$"
                }
             ],
             "type": "con"
@@ -136,7 +146,7 @@
                        // "instance": "^xfce4\\-terminal$",
                        // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
                        // "transient_for": "^$",
-                        "window_role": "^terminal6$"
+                       "window_role": "^terminal5$"
                        }
                     ],
                     "type": "con"

@@ -93,7 +93,7 @@ style = stereo
 [color]
 
 # supported colors are: red, green, yellow, magenta, cyan, white, blue, black.
-background = white
+; background = white
 foreground = cyan
 
 

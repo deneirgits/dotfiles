@@ -232,7 +232,7 @@ exec --no-startup-id exec xfce4-terminal --role terminal2 -e "/bin/bash -c 'sudo
 exec --no-startup-id exec xfce4-terminal --role terminal3 -e "/bin/bash -c 'screenfetch; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal4
 exec --no-startup-id exec xfce4-terminal --role terminal5
-exec --no-startup-id exec xfce4-terminal --role terminal7 -e "/bin/bash -c 'mc; exec /bin/bash -i'"
+exec --no-startup-id exec xfce4-terminal --role terminal7 -e "/bin/bash -c 'mc -b; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal8
 exec --no-startup-id exec google-chrome
 exec --no-startup-id exec slack

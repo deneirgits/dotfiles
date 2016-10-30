@@ -1,0 +1,92 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 314,
+       "width": 562,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Terminal - deneir-uy@binyiruyax: ~",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^Xfce4\\-terminal$",
+       // "instance": "^xfce4\\-terminal$",
+       // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
+       // "transient_for": "^$",
+       "window_role": "^terminal7$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.7,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 3,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 710,
+                       "width": 1328,
+                       "x": 19,
+                       "y": 39
+                    },
+                    "name": "Slack - JJ's Kids '17",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       "class": "^Slack$",
+                       // "instance": "^slack$",
+                       // "title": "^Slack\\ \\-\\ JJ\\'s\\ Kids\\ \\'17$",
+                       // "transient_for": "^$",
+                       // "window_role": "^browser\\-window$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 314,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Terminal - deneir-uy@binyiruyax: ~",
+            "percent": 0.3,
+            "swallows": [
+               {
+               // "class": "^Xfce4\\-terminal$",
+               // "instance": "^xfce4\\-terminal$",
+               // "title": "^Terminal\\ \\-\\ deneir\\-uy\\@binyiruyax\\:\\ \\~$",
+               // "transient_for": "^$",
+               "window_role": "^terminal8$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

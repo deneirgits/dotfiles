@@ -133,7 +133,8 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="google-chrome"] $workspace2
 assign [class="Uget-gtk"] $workspace3
 assign [class="Slack"] $workspace3
-assign [class="Nautilus"] $workspace3
+for_window [window_role="terminal7"] move to workspace $workspace3
+for_window [window_role="terminal8"] move to workspace $workspace3
 for_window [class="libreoffice-writer"] move to workspace $workspace4
 assign [class="Sublime_text"] $workspace5
 assign [class="NetBeans IDE 8.1"] $workspace5
@@ -219,7 +220,7 @@ bar {
 
 ####################################################################
 
-exec --no-startup-id i3-msg 'workspace 3: ; append_layout /home/deneir-uy/.config/i3/workspace-1.json;'
+exec --no-startup-id i3-msg 'workspace 3: ; append_layout /home/deneir-uy/.config/i3/workspace-4.json;'
 exec --no-startup-id i3-msg 'workspace 1: ; append_layout /home/deneir-uy/.config/i3/workspace-2.json'
 exec --no-startup-id /bin/cava-spotify
 
@@ -231,12 +232,10 @@ exec --no-startup-id exec xfce4-terminal --role terminal2 -e "/bin/bash -c 'sudo
 exec --no-startup-id exec xfce4-terminal --role terminal3 -e "/bin/bash -c 'screenfetch; exec /bin/bash -i'"
 exec --no-startup-id exec xfce4-terminal --role terminal4
 exec --no-startup-id exec xfce4-terminal --role terminal5
-#exec --no-startup-id exec xfce4-terminal --role terminal6 -e "/bin/bash -c 'cava; exec /bin/bash -i'"
+exec --no-startup-id exec xfce4-terminal --role terminal7 -e "/bin/bash -c 'mc; exec /bin/bash -i'"
+exec --no-startup-id exec xfce4-terminal --role terminal8
 exec --no-startup-id exec google-chrome
-#exec --no-startup-id exec spotify --role Spotify
-exec --no-startup-id exec nautilus
 exec --no-startup-id exec slack
-#exec --no-startup-id exec uget
 
 exec_always --no-startup-id exec compton --config ~/.config/compton.conf -b
 exec_always --no-startup-id exec feh --bg-scale /home/deneir-uy/Pictures/wallpaper.*

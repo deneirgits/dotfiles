@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#i3-msg "workspace 10: ; append_layout ~/.config/i3/workspace-3.json"
 spotify &
-sleep 50
-SPLITV="layout splitv"
-i3-msg $SPLITV 
-sleep 10
-i3-msg "workspace 10: ; append_layout ~/.config/i3/workspace-3.json"
+sleep 40
+#i3-msg "workspace 10: ; layout splitv" 
+#SPLITV="split v"
+#i3-msg "split v" 
+sleep 5
+i3-msg "workspace 10: ; layout splitv; append_layout ~/.config/i3/workspace-3.json" 
 /bin/cava-term &

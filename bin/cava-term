@@ -1,3 +1,4 @@
 #!/bin/bash
 
 xfce4-terminal --role terminal6 -e "cava"
+

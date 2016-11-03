@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec xfce4-terminal --role terminal4 -e '/bin/bash -c "cowthink -f stegosaurus $(fortune -s); exec /bin/bash -i"'

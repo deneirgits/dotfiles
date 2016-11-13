@@ -101,7 +101,7 @@ foreground = cyan
 
 # multiplier for the integral smoothing calculations. Takes values from 0 - 0.99.
 # Higher values means smoother, but less precise. 0 to disable.
-integral = 0.5 
+integral = 0.7 
 
 # disables or enables the so-called "Monstercat smoothing". Default: 1. Set to 0 to disable.
 ; monstercat = 1 

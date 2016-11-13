@@ -183,9 +183,9 @@ set $inactive-text-color #9E9E9E
 set $urgent-bg-color     #f44336
 
 #colors:               			border  		backgr. 		text    		ind.
-client.focused         			#1976D2 		#FFCA28		#ffffff 		#FFCA28
-client.focused_inactive 	#888888 		#03A9F4 		#ffffff 		#03A9F4 
-client.unfocused        		#888888 		#03A9F4  		#ffffff 		#03A9F4 
+client.focused         			#8D6E63 		#8D6E63		#ffffff 		#8D6E63
+client.focused_inactive 	#888888 		#78909C 		#ffffff 		#78909C 
+client.unfocused        		#888888 		#78909C  		#ffffff 		#78909C 
 client.urgent           			#f44336 		#f44336 		#ffffff 		#f44336
 
 # focus does not follow mouse
@@ -210,7 +210,7 @@ bar {
 		background #00000000
 	    	separator #757575
 		#                  				border             		background      		text
-		focused_workspace  	$FFCA28          		$FFCA28    		$text-color
+		focused_workspace  	$8D6E63          		$8D6E63    		$text-color
 		inactive_workspace 	$00000000 			$00000000 			$inactive-text-color
 		urgent_workspace   	$f44336   	$f44336   	$text-color
 	}

@@ -29,7 +29,9 @@ font pango: System San Francisco Display 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id exec xfce4-terminal
+set $terminal "gnome-terminal"
+#bindsym $mod+Return exec --no-startup-id exec xfce4-terminal
+bindsym $mod+Return exec --no-startup-id exec $terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -227,12 +229,12 @@ exec --no-startup-id /bin/cava-spotify
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 bindsym Print exec --no-startup-id exec gnome-screenshot
 
-exec --no-startup-id exec xfce4-terminal --role terminal1 -e "/bin/bash -c 'htop; exec /bin/bash -i'"
-exec --no-startup-id exec xfce4-terminal --role terminal2 -e "/bin/bash -c 'sudo nethogs; exec /bin/bash -i'"
-exec --no-startup-id exec xfce4-terminal --role terminal3 -e "/bin/bash -c 'neofetch --ascii; exec /bin/bash -i'"
+exec --no-startup-id exec $terminal --role terminal1 -e "/bin/bash -c 'htop; exec /bin/bash -i'"
+exec --no-startup-id exec $terminal --role terminal2 -e "/bin/bash -c 'sudo nethogs; exec /bin/bash -i'"
+exec --no-startup-id exec $terminal --role terminal3 -e "/bin/bash -c 'neofetch --ascii; exec /bin/bash -i'"
 exec --no-startup-id /bin/cowthink-fortune
-#exec --no-startup-id exec xfce4-terminal --role terminal4 -e "/bin/bash -c 'cowthink -f stegosaurus \\"$(fortune)\\"; exec /bin/bash -i'"
-exec --no-startup-id exec xfce4-terminal --role terminal5
+#exec --no-startup-id exec $terminal --role terminal4 -e "/bin/bash -c 'cowthink -f stegosaurus \\"$(fortune)\\"; exec /bin/bash -i'"
+exec --no-startup-id exec $terminal --role terminal5
 #exec --no-startup-id exec thunar
 exec --no-startup-id exec albert
 exec --no-startup-id exec google-chrome

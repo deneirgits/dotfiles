@@ -38,7 +38,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id exec j4-dmenu-desktop
-bindsym $mod+d exec --no-startup-id exec albert show
+bindsym $mod+d exec --no-startup-id exec synapse
+
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -183,22 +184,22 @@ set $text-color          #ffffff
 set $inactive-text-color #9E9E9E
 set $urgent-bg-color     #f44336
 
-#colors:               			border  		backgr. 		text    		ind.
-client.focused         			#e57373 		#e57373		#ffffff 		#e57373
-client.focused_inactive 	#7986CB 		#7986CB 		#ffffff 		#7986CB 
-client.unfocused        		#7986CB 		#7986CB  		#ffffff 		#7986CB 
-client.urgent           			#f44336 		#f44336 		#ffffff 		#f44336
+#colors:               			border  			backgr. 			text    		ind.
+client.focused         		#9ab6c6 		#9ab6c6		#ffffff 		#9ab6c6
+client.focused_inactive 	#627192 		#627192 		#ffffff 		#627192 
+client.unfocused        		#627192 		#627192  		#ffffff 		#627192 
+client.urgent           		#aa9ea3 		#aa9ea3 		#ffffff 		#aa9ea3
 
 # focus does not follow mouse
 focus_follows_mouse no
 
-for_window [class=".*"] border pixel 3
-for_window [class="albert"] border pixel 0
+for_window [class=".*"] border pixel 2
+for_window [class="Synapse"] border pixel 0
 #new_window none
 
 hide_edge_borders both
 gaps inner 8
-gaps outer 8
+gaps outer 2
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -212,9 +213,9 @@ bar {
 		background #00000000
 	    	separator #757575
 		#                  				border             		background      		text
-		focused_workspace  	$e57373          		$e57373    		$text-color
-		inactive_workspace 	$00000000 			$00000000 			$text-color
-		urgent_workspace   	$f44336   	$f44336   	$text-color
+		focused_workspace  	$9ab6c6          		$9ab6c6    			$text-color
+		inactive_workspace 		$00000000 			$00000000 			$text-color
+		urgent_workspace   		$aa9ea3   			$aa9ea3   			$text-color
 	}
 	
 
@@ -222,9 +223,10 @@ bar {
 
 ####################################################################
 #exec --no-startup-id i3-msg 'workspace 3: ; append_layout /home/deneir-uy/.config/i3/workspace-4.json;'
-exec --no-startup-id i3-msg 'workspace 1: ; append_layout /home/deneir-uy/.config/i3/workspace-2.json'
 exec --no-startup-id /bin/thunar-slack
+exec --no-startup-id i3-msg 'workspace 1: ; append_layout /home/deneir-uy/.config/i3/workspace-2.json'
 exec --no-startup-id /bin/cava-spotify
+exec --no-startup-id /bin/caps-ctrl
 
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 bindsym Print exec --no-startup-id exec gnome-screenshot
@@ -236,7 +238,6 @@ exec --no-startup-id /bin/cowthink-fortune
 #exec --no-startup-id exec $terminal --role terminal4 -e "/bin/bash -c 'cowthink -f stegosaurus \\"$(fortune)\\"; exec /bin/bash -i'"
 exec --no-startup-id exec $terminal --role terminal5
 #exec --no-startup-id exec thunar
-exec --no-startup-id exec albert
 exec --no-startup-id exec google-chrome
 #exec --no-startup-id exec slack
 

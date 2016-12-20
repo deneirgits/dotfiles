@@ -185,7 +185,7 @@ set $inactive-text-color #9E9E9E
 set $urgent-bg-color     #f44336
 
 #colors:               			border  			backgr. 			text    		ind.
-client.focused         		#9ab6c6 		#9ab6c6		#ffffff 		#9ab6c6
+client.focused         		#627192 		#627192		#ffffff 		#627192
 client.focused_inactive 	#627192 		#627192 		#ffffff 		#627192 
 client.unfocused        		#627192 		#627192  		#ffffff 		#627192 
 client.urgent           		#aa9ea3 		#aa9ea3 		#ffffff 		#aa9ea3
@@ -193,7 +193,7 @@ client.urgent           		#aa9ea3 		#aa9ea3 		#ffffff 		#aa9ea3
 # focus does not follow mouse
 focus_follows_mouse no
 
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 for_window [class="Synapse"] border pixel 0
 #new_window none
 
@@ -204,7 +204,8 @@ gaps outer 2
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	i3bar_command i3bar -t	
+	i3bar_command i3bar -t
+	tray_output none	
 	#status_command i3status
 	position top
 	status_command i3blocks -c /home/deneir-uy/.config/i3/i3blocks.conf

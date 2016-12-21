@@ -204,20 +204,20 @@ gaps outer 2
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	i3bar_command i3bar -t
-	tray_output none	
-	#status_command i3status
-	position top
-	status_command i3blocks -c /home/deneir-uy/.config/i3/i3blocks.conf
-	colors {
+	i3bar_command polybar example
+#	i3bar_command i3bar -t
+#	tray_output none
+#	position top
+#	status_command i3blocks -c /home/deneir-uy/.config/i3/i3blocks.conf
+#	colors {
 
-		background #00000000
-	    	separator #757575
+#		background #00000000
+#	    	separator #757575
 		#                  				border             		background      		text
-		focused_workspace  	$9ab6c6          		$9ab6c6    			$text-color
-		inactive_workspace 		$00000000 			$00000000 			$text-color
-		urgent_workspace   		$aa9ea3   			$aa9ea3   			$text-color
-	}
+#		focused_workspace  	$9ab6c6          		$9ab6c6    			$text-color
+#		inactive_workspace 		$00000000 			$00000000 			$text-color
+#		urgent_workspace   		$aa9ea3   			$aa9ea3   			$text-color
+#	}
 	
 
 }
@@ -242,6 +242,7 @@ exec --no-startup-id exec $terminal --role terminal5
 exec --no-startup-id exec google-chrome
 #exec --no-startup-id exec slack
 
+exec_always --no-startup-id /bin/polybar
 exec_always --no-startup-id exec compton --config ~/.config/compton.conf -b
 exec_always --no-startup-id exec feh --bg-scale /home/deneir-uy/Pictures/wallpaper.*
 

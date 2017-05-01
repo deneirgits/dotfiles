@@ -1,5 +1,5 @@
 #
-# ~/.bashrc
+# /root/.bashrc
 #
 
 # If not running interactively, don't do anything
@@ -11,7 +11,7 @@ preexec () {
     done
     # replacement for prompt
     echo -ne "\e[37;2m[`date +"%l:%M"`] \e[0m"
-    echo -ne "\e[31;1m$2 $ \e[0m"
+    echo -ne "\e[31;1m$2 # \e[0m"
     echo -n "$1"
     echo -e "\e[0m"
 }
@@ -30,7 +30,7 @@ preexec_invoke_exec () {
 trap 'preexec_invoke_exec' DEBUG
 
 function _update_ps1() {
-    PS1="\[\e[$LINES;1H\]\[\e[1;32m\]┌─\[\e[1;33m\]\u@\h\[\e[1;32m\] \w >\n└─╼\[\e[1;36m\] $ "
+    PS1="\[\e[$LINES;1H\]\[\e[1;32m\]┌─\[\e[1;35m\]\u@\h\[\e[1;32m\] \w >\n└─╼\[\e[1;36m\] # "
 
 }
 

@@ -3,6 +3,7 @@
 #
 
 # If not running interactively, don't do anything
+alias ls='ls --color=auto'
 preexec () {
     # delete old prompt; one "\e[1A\e[K" per line of $PS1
     for (( i=0, l=$(echo -e $PS1 | wc -l) ; i < l ; i++ ))
@@ -30,7 +31,7 @@ preexec_invoke_exec () {
 trap 'preexec_invoke_exec' DEBUG
 
 function _update_ps1() {
-    PS1="\[\e[$LINES;1H\]\[\e[1;32m\]┌─\[\e[1;33m\]\u@\h\[\e[1;32m\] \w >\n└─╼\[\e[1;36m\] $ "
+    PS1="\[\e[$LINES;1H\]\[\e[1;32m\]┌─\[\e[1;33m\]\u@\h\[\e[1;32m\] \w >\n\[\e[1;32m\]└─╼\[\e[1;36m\] $ "
 
 }
 

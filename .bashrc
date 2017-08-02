@@ -36,3 +36,6 @@ function _update_ps1() {
 }
 
 PROMPT_COMMAND='_update_ps1; unset DONTCLEANPROMPT'
+
+# Import colorscheme from 'wal'
+(wal -r &)

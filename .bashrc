@@ -40,6 +40,7 @@ trap 'preexec_invoke_exec' DEBUG
 
 function _update_ps1() {
     # Colors
+    NIL='\[\033[00m\]'
     RED='\[\033[31m\]'
     GREEN='\[\033[32m\]'
     YELLOW='\[\033[33m\]'
@@ -47,19 +48,18 @@ function _update_ps1() {
     PURPLE='\[\033[35m\]'
     CYAN='\[\033[36m\]'
     WHITE='\[\033[37m\]'
-    NIL='\[\033[00m\]'
 
     # Get Virtual Env
     if [[ $VIRTUAL_ENV != "" ]]
         then
           # Strip out the path and just leave the env name
-          venv=" ${WHITE}[${VIRTUAL_ENV##*/}]"
+          venv=" ${YELLOW}[${VIRTUAL_ENV##*/}]"
     else
           # In case you don't have one activated
           venv=''
     fi
 
-    PS1="\[\e[$LINES;1H\]\[\e[1;32m\]┌─\[\e[1;33m\]\u@\h\[\e[1;32m\]${venv}${CYAN} \w ${PURPLE}$(__git_ps1 "(%s)") >\n\[\e[1;32m\]└─╼\[\e[1;36m\] $ "
+    PS1="\[\e[$LINES;1H\]${CYAN}┌─${RED}\u@\h${venv}${GREEN}$(__git_ps1 " (%s)")${BLUE} \w >\n${CYAN}└─╼ $ ${WHITE}"
 
 }
 

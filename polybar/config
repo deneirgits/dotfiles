@@ -9,63 +9,106 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #021924
-background-alt = #444
+background = #00000000
+background-alt = ${colors.background}
 ;foreground = ${xrdb:color7:#222}
-foreground = #F39C71
-foreground-alt = #977781
+foreground = #FEDDD0
+foreground-alt = #FEDDD0
 primary = #ffb52a
 secondary = #e60053
-alert = #bd2c40
+alert = #B84E46
 
-[bar/example]
+black = #34383a
+red = #D8686D
+green = #79aa8f
+yellow = #EBC6A1
+blue = #808bba
+magenta = #cca1cc
+cyan = #63b7b7
+white = #FEDDD0
+
+[bar/music]
 ;monitor = ${env:MONITOR:HDMI-1}
+bottom = true
 width = 100%
-height = 21
-;offset-x = 1%
-offset-y = 50
-radius = 0.3
+height = 32
+radius = 0.0
 fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 0
-underline-size = 2
+overline-size = 3
+underline-size = 6
 line-color = #ffffff
 
 ;border-size = 0
-border-left-size = 0
-border-right-size = 0
-border-top-size = 0
-border-bottom-color = #00000000
+border-left-size = 54
+border-right-size = 54
+border-top-size = 10
+border-bottom-size = 10
+;border-bottom-color = #000000
 
-padding-left = 0
-padding-right = 0
+;padding-left = 28
+;padding-right = 28
+
+module-margin = 0
+
+font-0 = overpass:pixelsize=8;0
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Wuncon Siji:pixelsize=10;1
+font-3 = FontAwesome:size=9;0
+
+modules-left = spotify
+modules-center = 
+modules-right = previous playpause next
+
+override-redirect = true
+
+wm-restack = i3
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+
+[bar/example]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 32
+radius = 0.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 3
+underline-size = 6
+line-color = #ffffff
+
+;border-size = 0
+border-left-size = 54
+border-right-size = 54
+border-top-size = 10
+border-bottom-size = 10
+;border-bottom-color = #000000
+
+;padding-left = 28
+;padding-right = 28
 
 module-margin = 2
 
 font-0 = overpass:pixelsize=8;0
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=10;1
-font-3 = FontAwesome:size=7;0
+font-3 = FontAwesome:size=9;0
 
-modules-left = volume xwindow
+modules-left = xwindow
 modules-center = i3
-modules-right = wlan memory cpu eth battery temperature date
+modules-right = eth cpu memory date
 
-;tray-position = left
-;tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
+override-redirect = true
 
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
+wm-restack = i3
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -73,27 +116,12 @@ modules-right = wlan memory cpu eth battery temperature date
 [module/xwindow]
 type = internal/xwindow
 label-font = 1
-label = %title:0:80:...%
-format-padding = 1
-;format-background = #698AA1
-;format-underline = #cd7f8c
-format-overline = #cd7f8c
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 1
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+label =   %title:0:170:...%
+format-padding = 5
+format-background = ${colors.blue}
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+format-foreground = ${colors.white}
 
 [module/filesystem]
 type = internal/fs
@@ -111,119 +139,93 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 1
+label-focused-padding = 5
 
 label-occupied = %index%
-label-occupied-padding = 1
+label-occupied-padding = 5
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
+label-urgent-padding = 5
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 1
+label-empty-padding = 5
 
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-ws-icon-default = 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+;ws-icon-default = 
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-padding = 5
+label-mode-foreground = ${colors.primary}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = #A55C54
-label-focused-foreground = #021924
-;label-focused-underline = #EE7777
-label-focused-overline = #cd7f8c
-label-focused-padding = 2
+label-focused-background = ${colors.red}
+label-focused-foreground = ${colors.black}
+label-focused-underline = ${colors.background}
+label-focused-overline = ${colors.background}
+label-focused-padding = 5
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
-;label-unfocused-underline = #FFA6A6
-label-unfocused-overline = #e9bca9
-
-;label-unfocused-background = #FFA6A6
-label-unfocused-padding = 2
+label-unfocused-underline = ${colors.background}
+label-unfocused-overline = ${colors.background}
+label-unfocused-foreground = ${colors.black}
+label-unfocused-background = #FEDDD0
+label-unfocused-padding = 5
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
 ;label-visible-background = ${self.label-focused-background}
 ;label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = 2
+label-visible-padding = 5
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-background = #F7AC86
-label-urgent-foreground = ${colors.background}
-label-urgent-padding = 2
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
+label-urgent-background = #B84E46
+label-urgent-foreground = #FEDDD0
+label-urgent-padding = 5
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-padding = 1
-;format-background = #00E676
+;format-prefix = "| "
+format-padding = 5
+format-background = #918EB3
 format-prefix-foreground = ${colors.foreground-alt}
-format-overline = #7892ab
-;format-underline = #468B8B
+format-overline = ${colors.background}
+format-underline = ${colors.background}
 label-font = 1
-label = %percentage%%
+label =   %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-padding = 1
-;format-background = #1DE9B6
-;format-underline = #468B8B
-;format-overline = #7892ab
+format-padding = 5
+format-background = #B84E46
+format-underline = ${colors.background}
+format-overline = ${colors.background}
 label-font = 1
-label = %percentage_used%%
+label =   %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -231,7 +233,7 @@ interface = wlp3s0
 interval = 1.0
 
 label-connected-font = 1
-format-connected-padding = 1
+format-connected-padding = 5
 ;format-connected-background = #00000000
 format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #468B8B
@@ -253,13 +255,16 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s31f6
-interval = 3.0
+interface = enp0s3
+interval = 1.0
 
-;format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected-font = 1
+format-connected-padding = 5
+format-connected-foreground = ${colors.black}
+format-connected-background = #F77C6C
+format-connected-overline = ${colors.background}
+format-connected-underline = ${colors.background}
+label-connected =    %downspeed%   %upspeed%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -276,15 +281,15 @@ date =  %a, %b %d
 time =  %l:%M %p
 
 ;format-prefix = " "
-format-padding = 1
+format-padding = 5
 format-prefix-foreground = ${colors.foreground-alt}
-format-background = #977781
-format-foreground = #021924
-;format-underline = #468B8B
-format-overline = #7892ab
+format-background = #FEDDD0
+format-foreground = ${colors.black}
+format-underline = ${colors.background}
+format-overline = ${colors.background}
 label-font = 1
 
-label = %date%   %time%
+label =   %date%      %time%
 
 [module/volume]
 type = internal/volume
@@ -336,20 +341,20 @@ label-full-font = 1
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = #6FAAAA
 format-charging-overline = #c2d2c5
-format-charging-padding = 1
+format-charging-padding = 5
 ;format-charging-background = #C6FF00
 
 format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging-underline = #EE7777
 format-discharging-overline = #d48b94
-format-discharging-padding = 1
+format-discharging-padding = 5
 ;format-discharging-background = #C6FF00
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-overline = #7892ab
 ;format-full-underline = #468B8B
-format-full-padding = 1
+format-full-padding = 5
 ;format-full-background = #C6FF00
 
 ramp-capacity-0 = 
@@ -375,7 +380,7 @@ warn-temperature = 80
 label-font = 1
 
 format = <ramp> <label>
-format-padding = 2
+format-padding = 5
 ;format-background = #FFEA00
 ;format-underline = #468B8B
 format-overline = #7892ab
@@ -421,6 +426,45 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+[module/spotify]
+type              = custom/script
+exec              = ~/git-repos/dotfiles/polybar/mediaplayer
+exec-if           = pgrep spotify > /dev/null
+interval          = 0.01
+click-left        = playerctl -p spotify play-pause
+format-foreground = ${colors.green}
+format-background = ${colors.black}
+format-padding    = 5
+
+[module/previous]
+type              = custom/script
+format-text       = <label>
+label             = 
+exec              = echo label
+click-left        = exec playerctl previous
+format-foreground = ${colors.green}
+format-background = ${colors.black}
+format-padding    = 10
+
+[module/next]
+type              = custom/script
+format-text       = <label>
+label             = 
+exec              = echo label
+click-left        = exec playerctl next
+format-foreground = ${colors.green}
+format-background = ${colors.black}
+format-padding    = 10
+
+[module/playpause]
+type              = custom/script
+exec              = python3 ~/git-repos/dotfiles/polybar/playpause.py
+interval          = 0.01
+click-left        = playerctl -p spotify play-pause
+format-foreground = ${colors.green}
+format-background = ${colors.black}
+format-padding    = 10
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -430,6 +474,6 @@ screenchange-reload = true
 
 [global/wm]
 margin-top = 5
-margin-bottom = 5
+margin-bottom = 5]
 
 ; vim:ft=dosini

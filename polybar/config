@@ -59,9 +59,9 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=10;1
 font-3 = FontAwesome:size=9;0
 
-modules-left = spotify
+modules-left = previous playpause next spotify
 modules-center = 
-modules-right = previous playpause next
+modules-right =
 
 override-redirect = true
 
@@ -435,6 +435,7 @@ click-left        = playerctl -p spotify play-pause
 format-foreground = ${colors.green}
 format-background = ${colors.black}
 format-padding    = 5
+format-margin = 2
 
 [module/previous]
 type              = custom/script

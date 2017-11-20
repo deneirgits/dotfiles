@@ -114,7 +114,7 @@ sub playerctl {
 
     push(@metadata, $title) if $title;
 
-    print(join(" - ", @metadata)) if @metadata;
+    print("   ", join(" - ", @metadata)) if @metadata;
 }
 
 if ($player_arg eq '' or $player_arg =~ /mpd/) {

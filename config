@@ -236,6 +236,7 @@ exec --no-startup-id exec termite --title Server --role server -e "/bin/bash -c 
 # Workspace 3
 exec --no-startup-id i3-msg 'workspace 3; append_layout /home/deneir/.config/i3/workspace-3.json'
 exec --no-startup-id exec google-chrome-stable --app-id=amgkddkdiacnoeenfnpghiphdhbpboof
+for_window [class="crx_amgkddkdiacnoeenfnpghiphdhbpboof"] move to workspace 3
 exec --no-startup-id exec thunar
 
 # Workspace 9
@@ -263,10 +264,14 @@ exec_always --no-startup-id /home/deneir/git-repos/dotfiles/bin/polybar
 exec always --no-startup-id wal -i "$(< "${HOME}/.cache/wal/wal")"
 
 # Media player controls
-bindsym $mod+n  exec --no-startup-id playerctl play-pause
-bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
-bindsym $mod+m exec --no-startup-id playerctl next
-bindsym $mod+b exec --no-startup-id playerctl previous
+bindsym $mod+x  exec --no-startup-id playerctl play-pause
+bindsym $mod+c exec --no-startup-id playerctl next
+bindsym $mod+z exec --no-startup-id playerctl previous
+
+# Voume control
+bindsym $mod+n exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym $mod+m exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym $mod+comma exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Open emoji search
 bindsym $mod+q exec --no-startup-id emoji-keyboard -s

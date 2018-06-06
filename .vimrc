@@ -17,6 +17,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,10 +48,14 @@ set wildmenu
 set lazyredraw
 set incsearch hlsearch
 set completeopt-=preview
+set clipboard=unnamedplus
+set ignorecase
+set smartcase
 let mapleader = ";"
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_min_num_of_chars_for_completion = 1
 let NERDTreeQuitOnOpen = 1
+let g:NERDTreeWinSize=50
 nnoremap j gj
 nnoremap k gk
 nnoremap <leader><space> :nohlsearch<CR>
@@ -57,6 +63,7 @@ nnoremap <leader>b :bn<CR>
 nnoremap <leader>v :bp<CR>
 nnoremap <leader>q :bw<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>m :TagbarToggle<CR>
 syntax on
 
 " Close vim when only nerdtree is open
@@ -92,3 +99,23 @@ endfunction
 
 " Highlight currently open buffer in NERDTree
 "autocmd BufEnter * call SyncTree()
+
+" Bindings for clipboard functionalities
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+
+" Syntastic settings
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_loc_list_height=0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_python_checkers = ['flake8']
+
+" Tagbar settings
+let g:tagbar_width=55
+let g:tagbar_left=1
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1

@@ -19,6 +19,12 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'majutsushi/tagbar'
+Plugin 'mxw/vim-jsx'
+Plugin 'epilande/vim-react-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'alvan/vim-closetag'
+Plugin 'prettier/vim-prettier'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,6 +42,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 let g:indentLine_char='▏'
 let g:indentLine_color_term = 239
+let g:vim_json_syntax_conceal = 0
 filetype plugin on
 filetype plugin indent on
 let g:powerline_pycmd = 'py3'
@@ -51,8 +58,9 @@ set completeopt-=preview
 set clipboard=unnamedplus
 set ignorecase
 set smartcase
+set so=999 " set cursor vertically center
 let mapleader = ";"
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_min_num_of_chars_for_completion = 1
 let NERDTreeQuitOnOpen = 1
 let g:NERDTreeWinSize=50
@@ -119,3 +127,21 @@ let g:tagbar_width=55
 let g:tagbar_left=1
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
+
+" React snippets settings
+let g:UltiSnipsExpandTrigger="<C-l>"
+
+" Prettier settings
+let g:prettier#config#use_tabs = 'false'
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#tab_width = 4
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
+" Closetag settings
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
+let g:closetag_emptyTags_caseSensitive = 0
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'

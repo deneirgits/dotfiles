@@ -27,6 +27,7 @@ Plugin 'prettier/vim-prettier'
 Plugin 'elzr/vim-json'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'numirias/semshi'
+Plugin 'tell-k/vim-autopep8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -156,3 +157,7 @@ let g:airline_theme='luna'
 
 " Semshi settings
 let g:semshi#active = 'true'
+
+" Autopep8 settings
+let g:autopep8_disable_show_diff = 1
+let g:autopep8_on_save = 1

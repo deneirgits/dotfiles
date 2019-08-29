@@ -11,14 +11,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
-Plugin 'kien/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'majutsushi/tagbar'
 Plugin 'mxw/vim-jsx'
 Plugin 'epilande/vim-react-snippets'
 Plugin 'SirVer/ultisnips'
@@ -28,6 +25,9 @@ Plugin 'elzr/vim-json'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'numirias/semshi'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'qpkorr/vim-bufkill'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,6 +62,8 @@ set ignorecase
 set smartcase
 set so=999 " set cursor vertically center
 set nofoldenable
+set noshowmode
+set updatetime=100
 let mapleader = ";"
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_min_num_of_chars_for_completion = 1
@@ -73,9 +75,11 @@ nnoremap k gk
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>b :bn<CR>
 nnoremap <leader>v :bp<CR>
-nnoremap <leader>q :bw<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>m :TagbarToggle<CR>
+nnoremap <leader>q :BW<CR>
+nnoremap <leader>w :bw<CR>
+nnoremap <leader>o :NERDTreeToggle<CR>
+nnoremap <leader>n :FZF<CR>
+nnoremap <leader>m :Windows<CR>
 syntax on
 
 " Close vim when only nerdtree is open
@@ -126,12 +130,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 
-" Tagbar settings
-let g:tagbar_width=55
-let g:tagbar_left=1
-let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
-
 " React snippets settings
 let g:UltiSnipsExpandTrigger="<C-l>"
 
@@ -161,3 +159,10 @@ let g:semshi#active = 'true'
 " Autopep8 settings
 let g:autopep8_disable_show_diff = 1
 let g:autopep8_on_save = 1
+
+" FZF settings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'enter': 'vsplit' }
+

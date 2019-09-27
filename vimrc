@@ -28,6 +28,7 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'junegunn/fzf.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -72,14 +73,15 @@ let g:NERDTreeWinSize=50
 let g:python3_host_prog = '/usr/bin/python'
 nnoremap j gj
 nnoremap k gk
-nnoremap <leader><space> :nohlsearch<CR>
-nnoremap <leader>b :bn<CR>
-nnoremap <leader>v :bp<CR>
-nnoremap <leader>q :BW<CR>
-nnoremap <leader>w :bw<CR>
-nnoremap <leader>o :NERDTreeToggle<CR>
-nnoremap <leader>n :FZF<CR>
-nnoremap <leader>m :Windows<CR>
+nnoremap / :BLines<CR>
+nnoremap <silent><leader><space> :nohlsearch<CR>
+nnoremap <silent><leader>b :tabn<CR>
+nnoremap <silent><leader>v :tabp<CR>
+nnoremap <silent><leader>q :BW<CR>
+nnoremap <silent><leader>w :bw<CR>
+nnoremap <silent><leader>o :NERDTreeToggle<CR>
+nnoremap <silent><leader>n :FZF<CR>
+nnoremap <silent><leader>m :Windows<CR>
 syntax on
 
 " Close vim when only nerdtree is open
@@ -150,7 +152,7 @@ let g:closetag_close_shortcut = '<leader>>'
 
 " Airline settings
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_theme='luna'
 
 " Semshi settings
@@ -161,8 +163,24 @@ let g:autopep8_disable_show_diff = 1
 let g:autopep8_on_save = 1
 
 " FZF settings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'enter': 'vsplit' }
+function! s:GotoOrOpen(command, ...)
+  for file in a:000
+    if a:command == 'e'
+      exec 'e ' . file
+    else
+      exec "tab drop " . file
+    endif
+  endfor
+endfunction
 
+command! -nargs=+ GotoOrOpen call s:GotoOrOpen(<f-args>)
+
+let g:fzf_action = {
+  \ 'enter': 'GotoOrOpen tab',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_buffers_jump = 1
+
+" Papercolor theme settings
+set t_Co=256
+set background=light

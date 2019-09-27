@@ -28,7 +28,6 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'junegunn/fzf.vim'
-Plugin 'NLKNguyen/papercolor-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,9 +43,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-let g:indentLine_char='▏'
-let g:indentLine_color_term = 239
-let g:vim_json_syntax_conceal = 0
 filetype plugin on
 filetype plugin indent on
 set laststatus=2
@@ -66,10 +62,6 @@ set nofoldenable
 set noshowmode
 set updatetime=100
 let mapleader = ";"
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
-let g:ycm_min_num_of_chars_for_completion = 1
-let NERDTreeQuitOnOpen = 1
-let g:NERDTreeWinSize=50
 let g:python3_host_prog = '/usr/bin/python'
 nnoremap j gj
 nnoremap k gk
@@ -84,45 +76,29 @@ nnoremap <silent><leader>n :FZF<CR>
 nnoremap <silent><leader>m :Windows<CR>
 syntax on
 
-" Close vim when only nerdtree is open
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Show hidden files in nerdtree
-let NERDTreeShowHidden=1
-
-" Open nerdtree always
-"autocmd vimenter * NERDTree
-"autocmd VimEnter * wincmd p
-
-" Open nerdtree when no files are specified
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Open nerdtree on right side
-let g:NERDTreeWinPos = "right"
-
-" Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-"autocmd BufEnter * call SyncTree()
-
 " Bindings for clipboard functionalities
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <C-r><C-o>+
+
+" IndentLine settings
+let g:indentLine_char='▏'
+let g:indentLine_color_term = 239
+let g:vim_json_syntax_conceal = 0
+
+" NERDTree settings
+" Close vim when only nerdtree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
+let g:NERDTreeWinPos = "right"
+let NERDTreeQuitOnOpen = 1
+let g:NERDTreeWinSize=50
+let NERDTreeMapOpenInTab='<ENTER>'
+
+" YouCompleteMe settings
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
+let g:ycm_min_num_of_chars_for_completion = 1
 
 " Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
@@ -180,7 +156,3 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_buffers_jump = 1
-
-" Papercolor theme settings
-set t_Co=256
-set background=light

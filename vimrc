@@ -71,12 +71,14 @@ let g:python3_host_prog = '/usr/bin/python'
 nnoremap j gj
 nnoremap k gk
 nnoremap / :BLines<CR>
-nnoremap <silent><leader><space> :nohlsearch<CR>:Semshi highlight<CR>
+nnoremap <silent><leader><space> :nohlsearch<CR>
 nnoremap <silent><leader>b :tabn<CR>
 nnoremap <silent><leader>v :tabp<CR>
 nnoremap <silent><leader>q :BW<CR>
-nnoremap <silent><leader>w :tabc<CR>
-nnoremap <silent><leader>t <C-w>T
+nnoremap <silent><leader>w :bw<CR>
+nnoremap <silent><leader>o :NERDTreeToggle<CR>
+nnoremap <silent><leader>n :FZF<CR>
+nnoremap <silent><leader>m :Windows<CR>
 syntax on
 
 " Bindings for clipboard functionalities

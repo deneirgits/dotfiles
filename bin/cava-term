@@ -1,4 +1,0 @@
-#!/bin/bash
-
-gnome-terminal --role terminal6 -e "cava"
-

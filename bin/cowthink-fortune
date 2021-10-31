@@ -1,3 +1,0 @@
-#!/bin/bash
-
-exec gnome-terminal --role terminal4 -e '/bin/bash -c "cowthink -f stegosaurus $(fortune -s) | lolcat; exec /bin/bash -i"'

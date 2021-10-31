@@ -1,8 +1,0 @@
-#!/bin/bash
-
-spotify &
-#i3-msg "workspace 10: ; layout splitv" 
-#SPLITV="split v"
-#i3-msg "split v" 
-i3-msg "layout splitv" 
-/home/deneiruy/git-repos/dotfiles/bin/cava-term &

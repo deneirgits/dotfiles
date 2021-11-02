@@ -1,0 +1,23 @@
+window {
+	background-color: --wofi-color0;
+	font-family: Inconsolata for Powerline;
+}
+#input image {
+	color: --wofi-color15;
+}
+#input {
+	margin-bottom: 20px;
+	margin-top: 10px;
+	box-shadow: none;
+	background-color: --wofi-color0;
+	border-radius: 0px;
+	color: --wofi-color15;
+}
+#input:focus {
+	background-color: --wofi-color9;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+label {
+	color: --wofi-color15;
+}

@@ -1,0 +1,8 @@
+#!/bin/bash
+$(sed '1,/^### DATA ###$/d' $0 | wofi --show dmenu -p system)
+exit
+### DATA ###
+poweroff
+reboot
+logout
+nap

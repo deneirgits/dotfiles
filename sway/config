@@ -1,3 +1,4 @@
+include /home/deneir/.cache/wal/colors-sway
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -25,8 +26,10 @@ font pango:SF Pro Text:style=Regular 10
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Wallpapers/Aenami/alena-aenami-away-1k.jpg fill
-#
+#output * bg ~/Pictures/Wallpapers/wallpaper fill
+output * bg $wallpaper fill
+output * adaptive_sync on
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -202,6 +205,11 @@ bar {
     swaybar_command waybar
 }
 
+# Colors
+client.focused                  $color4     $color4     $color15    $color4     $color4
+client.unfocused                $color0     $color0     $color15    $color0     $color0
+client.focused_inactive         $color0     $color0     $color15    $color0     $color0
+
 focus_follows_mouse no
 
 gaps inner 20
@@ -226,12 +234,19 @@ bindsym $mod+x  exec playerctl play-pause
 bindsym $mod+c exec playerctl next
 bindsym $mod+z exec playerctl previous
 
-# Rofi
-bindsym $mod+Shift+space exec wofi --show run
-bindsym $mod+space exec /home/deneir/.config/wofi/switch
+# Wofi
+bindsym $mod+space exec wofi --show drun
+bindsym $mod+Shift+space exec /home/deneir/.config/wofi/system
 bindsym $mod+period exec /home/deneir/.config/wofi/emoji
 
 # Notifications
 exec /usr/bin/dunst
+
+# Load GTK settings
+exec_always ~/.config/sway/import-gsettings \
+    gtk-theme:gtk-theme-name \
+    icon-theme:gtk-icon-theme-name \
+    cursor-theme:gtk-cursor-theme-name
+
 
 include /etc/sway/config.d/*

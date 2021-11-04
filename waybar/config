@@ -1,14 +1,13 @@
 {
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 25, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
-    "modules-left": ["sway/workspaces", "custom/separator", "sway/mode", "sway/window"],
-    "modules-center": [],
+    "position": "top", // (top|bottom|left|right)
+    "height": 25,
+    "spacing": 0,
+    "modules-left": ["sway/window", "sway/mode"],
+    "modules-center": ["sway/workspaces"],
     "modules-right": [
         "network",
         "custom/separator", "disk", "memory", "cpu", "temperature",
-        "custom/separator", "pulseaudio", "pulseaudio#mic",
-        "custom/separator", "clock#date", "clock"
+        "pulseaudio", "pulseaudio#mic", "clock"
     ],
     "sway/workspaces": {
         "disable-scroll": true,
@@ -28,13 +27,8 @@
     },
     "clock": {
         "timezone": "Asia/Manila",
-        "interval": 1,
-        "format": " {:%r}",
-    },
-    "clock#date": {
-        "timezone": "Asia/Manila",
-        "interval": 3600,
-        "format": " {:%a %e %b %G}",
+        "interval": 60,
+        "format": "{:%a %e %b %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
     },
     "cpu": {
@@ -65,9 +59,9 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}% {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": " ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

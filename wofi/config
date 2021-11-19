@@ -3,10 +3,14 @@ watch_css=true
 # symlink of pywal color ouput
 colors=colors
 
-width=25%
-height=25%
+width=750
+height=500
 
-normal_window=true
+allow_markup=true
+normal_window=false
 allow_images=true
 insensitive=true
 hide_scroll=true
+monitor=HDMI-A-2
+
+image_size=50

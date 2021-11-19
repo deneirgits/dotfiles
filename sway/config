@@ -1,4 +1,3 @@
-include /home/deneir/.cache/wal/colors-sway
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -21,18 +20,21 @@ set $term alacritty
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
-font pango:SF Pro Text:style=Regular 10
+font pango:SF Pro Text:style=Regular 14
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg ~/Pictures/Wallpapers/wallpaper fill
+exec_always wal -qen -i $(find ~/Pictures/Wallpapers/UHD/. -type f | shuf -n1)
+include /home/deneir/.cache/wal/colors-sway
+
 output * bg $wallpaper fill
 output * adaptive_sync on
 
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+set $primary HDMI-A-2
+set $secondary HDMI-A-1
+output $secondary position 1920,0 transform 270
+output $primary scale 1
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -114,7 +116,18 @@ output * adaptive_sync on
     bindsym $mod+Shift+Right move right
 #
 # Workspaces:
-#
+
+    workspace 1 output $primary
+    workspace 2 output $primary
+    workspace 3 output $primary
+    workspace 4 output $primary
+    workspace 5 output $primary
+    workspace 6 output $primary
+    workspace 7 output $primary
+    workspace 8 output $secondary
+    workspace 9 output $secondary
+    workspace 10 output $secondary
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -215,8 +228,8 @@ focus_follows_mouse no
 gaps inner 20
 
 default_border none
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 4
+default_floating_border pixel 4
 hide_edge_borders smart
 title_align center
 
@@ -224,10 +237,15 @@ title_align center
 bindsym $mod+p exec grim - | swappy -f - -o ~/Pictures/Screenshots/$(date +"%Y_%m_%d_%T")
 bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f - -o ~/Pictures/Screenshots/$(date +"%Y_%m_%d_%T")
 
-# Volume
-bindsym $mod+n exec  pactl set-sink-volume 0 -5%
-bindsym $mod+m exec  pactl set-sink-volume 0 +5%
-bindsym $mod+comma exec  pactl set-sink-mute 0 toggle
+# Output Volume
+bindsym $mod+n exec pactl set-sink-volume 0 -5%
+bindsym $mod+m exec pactl set-sink-volume 0 +5%
+bindsym $mod+comma exec pactl set-sink-mute 0 toggle
+
+# Input Volume
+bindsym $mod+Shift+n exec pactl set-source-volume 0 -5%
+bindsym $mod+Shift+m exec pactl set-source-volume 0 +5%
+bindsym $mod+Shift+comma exec pactl set-source-mute 0 toggle
 
 # Player controls
 bindsym $mod+x  exec playerctl play-pause
@@ -235,7 +253,7 @@ bindsym $mod+c exec playerctl next
 bindsym $mod+z exec playerctl previous
 
 # Wofi
-bindsym $mod+space exec wofi --show drun
+bindsym $mod+space exec wofi --show drun -p apps
 bindsym $mod+Shift+space exec /home/deneir/.config/wofi/system
 bindsym $mod+period exec /home/deneir/.config/wofi/emoji
 

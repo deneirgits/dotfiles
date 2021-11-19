@@ -1,6 +1,7 @@
-{
+[{
+    "output": "HDMI-A-2",
     "position": "top", // (top|bottom|left|right)
-    "height": 25,
+    "height": 35,
     "spacing": 0,
     "modules-left": ["sway/window", "sway/mode"],
     "modules-center": ["sway/workspaces"],
@@ -20,7 +21,8 @@
         }
     },
     "sway/window": {
-        "format": "  {}"
+        "format": "  {}",
+        "max-length": 75
     },
     "sway/mode": {
         "format": "<span>{}</span>"
@@ -83,4 +85,63 @@
     "custom/separator": {
         "format": " | ",
     },
-}
+},
+{
+    "output": "HDMI-A-1",
+    "position": "top", // (top|bottom|left|right)
+    "height": 25,
+    "spacing": 0,
+    "modules-left": ["sway/window", "sway/mode"],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["pulseaudio", "pulseaudio#mic", "clock"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "sway/window": {
+        "format": "  {}",
+        "max-length": 75
+    },
+    "sway/mode": {
+        "format": "<span>{}</span>"
+    },
+    "clock": {
+        "timezone": "Asia/Manila",
+        "interval": 60,
+        "format": "{:%a %e %b %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio#mic": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    },
+    "custom/separator": {
+        "format": " | ",
+    },
+}]

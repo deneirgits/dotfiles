@@ -18,7 +18,7 @@ M.options = {
    number = true,
    -- relative numbers in normal mode tool at the bottom of options.lua
    numberwidth = 2,
-   relativenumber = false,
+   relativenumber = true,
    expandtab = true,
    shiftwidth = 2,
    smartindent = true,
@@ -62,14 +62,14 @@ M.plugins = {
    status = {
       blankline = true, -- show code scope with symbols
       bufferline = true, -- list open buffers up the top, easy switching too
-      colorizer = false, -- color RGB, HEX, CSS, NAME color codes
+      colorizer = true, -- color RGB, HEX, CSS, NAME color codes
       comment = true, -- easily (un)comment code, language aware
       dashboard = false, -- NeoVim 'home screen' on open
       esc_insertmode = true, -- map to <ESC> with no lag
       feline = true, -- statusline
       gitsigns = true, -- gitsigns in statusline
       lspsignature = true, -- lsp enhancements
-      telescope_media = false, -- media previews within telescope finders
+      telescope_media = true, -- media previews within telescope finders
       vim_matchup = true, -- % operator enhancements
       cmp = true,
       nvimtree = true,
@@ -81,7 +81,7 @@ M.plugins = {
          setup_lspconf = "", -- path of file containing setups of different lsps
       },
       nvimtree = {
-         enable_git = 0,
+         enable_git = 1,
       },
       luasnip = {
          snippet_path = {},

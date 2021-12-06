@@ -1,7 +1,7 @@
 set $wallpaper /home/deneir/Pictures/Wallpapers/wallpaper.png
 set $wallpaper2 /home/deneir/Pictures/Wallpapers/wallpaper2.png
 
-set $background #292D3E
+set $background #131a21
 set $foreground #EEFFFF
 
 set $color0 #263238

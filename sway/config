@@ -23,7 +23,6 @@ set $term alacritty
 font pango:SF Pro Text:style=Regular 14
 
 ### Output configuration
-# exec wal -qen -i $(find ~/Pictures/Wallpapers/UHD/. -type f | shuf -n1)
 include /home/deneir/git-repos/dotfiles/colors/sway
 set $primary HDMI-A-2
 set $secondary HDMI-A-1

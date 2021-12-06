@@ -8,7 +8,7 @@
     "modules-right": [
         "network",
         "custom/separator", "disk", "memory", "cpu", "temperature",
-        "pulseaudio", "pulseaudio#mic", "clock"
+        "custom/separator", "pulseaudio", "pulseaudio#mic", "clock"
     ],
     "sway/workspaces": {
         "disable-scroll": true,
@@ -93,18 +93,8 @@
     "height": 25,
     "spacing": 0,
     "modules-left": ["sway/window", "sway/mode"],
-    "modules-center": ["sway/workspaces"],
+    "modules-center": [],
     "modules-right": ["pulseaudio", "pulseaudio#mic", "clock"],
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{name}",
-        "format-icons": {
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
     "sway/window": {
         "format": "  {}",
         "max-length": 75

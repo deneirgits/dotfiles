@@ -8,8 +8,8 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
+# import:
+#   - ~/git-repos/dotfiles/colors/alacritty.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -173,14 +173,14 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+# draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
+  primary:
+    background: '#131a21'
+    foreground: '#EEFFFF'
 
     # Bright and dim foreground colors
     #
@@ -267,26 +267,26 @@ font:
   #  background: CellForeground
 
   # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
+  normal:
+    black:   '#263238'
+    red:     '#dc6068'
+    green:   '#abcf76'
+    yellow:  '#e6b455'
+    blue:    '#6e98eb'
+    magenta: '#b480d6'
+    cyan:    '#71c6e7'
+    white:   '#EEFFFF'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
+  bright:
+    black:   '#546E7A'
+    red:     '#F07178'
+    green:   '#C3E88D'
+    yellow:  '#FFCB6B'
+    blue:    '#82AAFF'
+    magenta: '#C792EA'
+    cyan:    '#89DDFF'
+    white:   '#FFFFFF'
 
   # Dim colors
   #
@@ -311,6 +311,7 @@ font:
   #   `- { index: 16, color: '#ff00ff' }`
   #
   #indexed_colors: []
+
 
 # Bell
 #

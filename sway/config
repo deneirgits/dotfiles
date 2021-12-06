@@ -24,15 +24,16 @@ font pango:SF Pro Text:style=Regular 14
 
 ### Output configuration
 # exec wal -qen -i $(find ~/Pictures/Wallpapers/UHD/. -type f | shuf -n1)
-include /home/deneir/.cache/wal/colors-sway
+include /home/deneir/git-repos/dotfiles/colors/sway
+set $primary HDMI-A-2
+set $secondary HDMI-A-1
 
-output * bg $wallpaper fill
+output $primary bg $wallpaper fill
+output $secondary bg $wallpaper2 fill
 output * adaptive_sync on
 
 # Example configuration:
 #
-set $primary HDMI-A-2
-set $secondary HDMI-A-1
 output $secondary position 1920,0 transform 270
 output $primary scale 1
 #

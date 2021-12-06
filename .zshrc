@@ -1,5 +1,3 @@
-# Change terminal colors based on pywal output
-(cat ~/.cache/wal/sequences &)
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/bin:$HOME/bin:/usr/local/bin:$PATH
 

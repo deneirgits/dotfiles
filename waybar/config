@@ -1,5 +1,5 @@
 [{
-    "output": "HDMI-A-2",
+    "output": "HDMI-A-1",
     "position": "top", // (top|bottom|left|right)
     "height": 35,
     "spacing": 0,
@@ -88,7 +88,7 @@
     },
 },
 {
-    "output": "HDMI-A-1",
+    "output": "HDMI-A-2",
     "position": "top", // (top|bottom|left|right)
     "height": 25,
     "spacing": 0,

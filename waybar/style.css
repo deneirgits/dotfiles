@@ -4,13 +4,13 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "SF Pro Display", "Font Awesome 5 Brands", "Font Awesome 5 Free", "Font Awesome 5 Free Solid", "Font Awesome 5 Free Regular";
+    font-family: "SF Pro Display", "Font Awesome 6 Brands", "Font Awesome 6 Free", "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular";
     font-weight: bold;
     font-size: 17px;
     min-height: 0;
 }
 
-window.HDMI-A-1 * {
+window.HDMI-A-2 * {
     font-size: 12px;
 }
 
@@ -121,7 +121,7 @@ label:focus {
 #pulseaudio.muted {
 }
 
-window.HDMI-A-1 #pulseaudio {
+window.HDMI-A-2 #pulseaudio {
     color: @foreground;
 }
 

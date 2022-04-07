@@ -24,8 +24,8 @@ font pango:SF Pro Text:style=Regular 14
 
 ### Output configuration
 include /home/deneir/git-repos/dotfiles/colors/sway
-set $primary HDMI-A-2
-set $secondary HDMI-A-1
+set $primary HDMI-A-1
+set $secondary HDMI-A-2
 
 output $primary bg $wallpaper fill
 output $secondary bg $wallpaper2 fill
@@ -33,8 +33,8 @@ output * adaptive_sync on
 
 # Example configuration:
 #
-output $secondary position 1920,0 transform 270
-output $primary scale 1
+output $secondary position 0,0 transform 270
+output $primary position 1080,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -226,12 +226,16 @@ client.focused_inactive         $color0     $color0     $color15    $color0     
 focus_follows_mouse no
 
 gaps inner 20
+smart_gaps on
 
 default_border none
 default_border pixel 4
 default_floating_border pixel 4
 hide_edge_borders smart
 title_align center
+
+# Origin
+for_window [instance="origin.exe"] floating enable
 
 # Screenshot
 bindsym $mod+p exec grim - | swappy -f - -o ~/Pictures/Screenshots/$(date +"%Y_%m_%d_%T")
@@ -262,6 +266,9 @@ exec /usr/bin/dunst
 
 # Load GTK settings
 exec_always ~/.config/sway/import-gsettings
+
+# Set primary monitor
+exec set-primary-monitor 1080+0
 
 
 include /etc/sway/config.d/*

@@ -80,13 +80,12 @@ ZSH_CUSTOM=/home/deneir/.oh-my-zsh/custom
 plugins=(
 	git
     sudo
-    cargo
+    rust
     docker
     docker-compose
     pip
     pyenv
     python
-    rustup
     yarn
 	zsh-autosuggestions
 )
@@ -106,10 +105,11 @@ plugins=(
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+alias vim="nvim"
+alias vi="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias yay="paru --skipreview --removemake --cleanafter --sudoloop"
 alias yeet="paru -Rs"
-alias vim="nvim"
 alias rm="echo 'Use trash-cli'"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
@@ -126,3 +126,4 @@ export FZF_ALT_C_COMMAND='rg --hidden --files --null 2> /dev/null | xargs -0 dir
 source $ZSH/oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+export PATH="$PATH:$HOME/.spicetify"

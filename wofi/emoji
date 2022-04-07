@@ -1,5 +1,5 @@
 #!/bin/bash
-sed '1,/^### DATA ###$/d' $0 | wofi --show dmenu -p emoji | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
+sed '1,/^### DATA ###$/d' $0 | wofi --show dmenu -p emoji --conf /home/deneir/.config/wofi/config-emoji  | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
 exit
 ### DATA ###
 😀 grinning face

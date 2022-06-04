@@ -15,6 +15,7 @@ window {
 	box-shadow: none;
 	background-color: --wofi-color0;
 	border-radius: 0px;
+        border: 0px;
 	color: --wofi-color15;
 }
 #input:focus {

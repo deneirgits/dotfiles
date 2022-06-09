@@ -237,7 +237,7 @@ client.focused_inactive         $color0     $color0     $color15    $color0     
 focus_follows_mouse no
 
 gaps inner 20
-smart_gaps on
+smart_gaps off
 
 default_border none
 default_border pixel 4

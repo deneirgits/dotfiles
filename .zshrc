@@ -114,7 +114,7 @@ alias vi="nvim"
 alias zshconfig="vim ~/.zshrc"
 alias yay="paru --skipreview --removemake --cleanafter --sudoloop"
 alias yeet="paru -Rs"
-alias rm="echo 'Use trash-cli'"
+alias rm="echo 'Use trash'"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then

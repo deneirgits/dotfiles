@@ -29,5 +29,8 @@ set smartindent
 " Set cursor vertically center
 set so=999
 
+" Clipboard
+set clipboard=unnamedplus
+
 let mapleader = " "
 syntax on

@@ -6,6 +6,7 @@
     "modules-left": ["sway/window#icon","sway/window"],
     "modules-center": ["sway/workspaces", "sway/mode"],
     "modules-right": [
+        "network#wifi-icon", "network#wifi",
         "network#icon", "network",
         "custom/separator", "disk#icon", "disk", "memory#icon", "memory",
         "custom/separator", "cpu#icon", "cpu", "temperature#icon", "temperature",
@@ -75,12 +76,25 @@
         "format": "{temperatureC}°C",
     },
     "network#icon": {
-        "format":""
+        "interface": "enp3s0",
+        "format":"",
+        "format-disconnected": "",
     },
     "network": {
         "interface": "enp3s0",
         "interval": 3,
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "",
+        "format": " {bandwidthDownBits}    {bandwidthUpBits}"
+    },
+    "network#wifi-icon": {
+        "interface": "wlan0",
+        "format":"",
+        "format-disconnected": "",
+    },
+    "network#wifi": {
+        "interface": "wlan0",
+        "interval": 3,
+        "format-disconnected": "",
         "format": " {bandwidthDownBits}    {bandwidthUpBits}"
     },
     "pulseaudio#icon": {

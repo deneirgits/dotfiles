@@ -115,6 +115,8 @@ alias zshconfig="vim ~/.zshrc"
 alias yay="paru --skipreview --removemake --cleanafter --sudoloop"
 alias yeet="paru -Rs"
 alias rm="echo 'Use trash'"
+alias work-notes="cd ~/git-repos/notes/Work; vim ."
+alias notes="cd ~/git-repos/notes; vim ."
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then

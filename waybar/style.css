@@ -114,11 +114,14 @@ label:focus {
     background-color: @color14;
 }
 
-#network.icon {
-    background-color: @color5;
-}
+#network.wifi,
 #network {
     background-color: @color13;
+}
+
+#network.icon,
+#network.wifi-icon {
+    background-color: @color5;
 }
 
 #pulseaudio.icon,

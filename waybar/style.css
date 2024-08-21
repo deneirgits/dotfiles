@@ -1,51 +1,54 @@
 @import url("/home/deneir/git-repos/dotfiles/colors/waybar.css");
 
 * {
-    border: none;
-    border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "SF Pro Display", "Font Awesome 6 Brands", "Font Awesome 6 Free", "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular";
-    font-weight: 500;
-    font-size: 17px;
-    min-height: 0;
-    /* margin: 2px 0 2px 0; */
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "SF Pro Display", "Font Awesome 6 Brands", "Font Awesome 6 Free",
+    "Font Awesome 6 Free Solid", "Font Awesome 6 Free Regular";
+  font-weight: 500;
+  font-size: 17px;
+  min-height: 0;
+  /* margin: 2px 0 2px 0; */
 }
 
 window.HDMI-A-2 * {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 window#waybar {
-    /* background-color: @background; */
-    /* background-color: rgba(25, 34, 41, 0.7); */
-    background-color: transparent;
-    color: @background;
-    transition-property: background-color;
-    transition-duration: .5s;
+  /* background-color: @background; */
+  /* background-color: rgba(25, 34, 41, 0.7); */
+  background-color: transparent;
+  color: @background;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 #workspaces button {
-    padding: 0;
-    color: @color8;
-    background-color: @foreground;
+  padding: 0 15px;
+  color: @color8;
+  background-color: @foreground;
 }
 
 #workspaces button.focused {
-    color: @foreground;
-    /* border-top: 3px solid @color2; */
-    /* border-bottom: 3px solid @color2; */
-    background-color: @color0;
-    /* box-shadow: inset 0 -3px #ffffff;*/
+  color: @foreground;
+  /* border-top: 3px solid @color2; */
+  /* border-bottom: 3px solid @color2; */
+  background-color: @color0;
+  /* box-shadow: inset 0 -3px #ffffff;*/
 }
 
 #workspaces button.urgent {
-    background-color: @color1;
-    color: @foreground;
+  background-color: @color1;
+  color: @foreground;
 }
 
 #clock,
 #battery,
 #cpu,
+#custom-gpu,
+#custom-gpu-temp,
 #memory,
 #disk,
 #temperature,
@@ -53,97 +56,116 @@ window#waybar {
 #pulseaudio,
 #mode,
 #window,
-#mode {
-    padding: 7px 10px;
-    color: @background;
+#mode,
+#bluetooth,
+#custom-user,
+#language,
+#user,
+#custom-updates {
+  padding: 7px 10px;
+  color: @background;
 }
 
 #custom-separator {
-    padding: 0 0px;
-    color: @background;
+  padding: 0 0px;
+  color: @background;
 }
 
 #custom-arch {
-    font-family: "Inconsolata Nerd Font";
-    padding: 0 0px;
-    color: @foreground;
+  font-family: "Inconsolata Nerd Font";
+  padding: 0 0px;
+  color: @foreground;
 }
 
+#custom-gpu.icon,
+#temperature.gpu-icon,
 #window.icon {
-    background-color: @color4;
-    margin-left: 20px;
+  background-color: @color4;
 }
+#custom-gpu,
+#temperature.gpu,
 #window {
-    background-color: @color12;
+  background-color: @color12;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+/* If workspaces is the leftmost module, add left margin */
+.modules-left {
+  margin-left: 20px;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+/* If workspaces is the rightmost module, add right margin */
+.modules-right {
+  margin-right: 20px;
+}
+
+#clock.icon {
+  /* background-color: @color5; */
+  background-color: @color1;
 }
 
 #clock {
-    /* background-color: @color5; */
-    background-color: @color9;
-    margin-right: 20px;
+  /* background-color: @color5; */
+  background-color: @color9;
 }
 
-
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: @background;
-    }
+  to {
+    background-color: #ffffff;
+    color: @background;
+  }
 }
 
 label:focus {
-    background-color: @background;
+  background-color: @background;
 }
 
+#language.icon,
 #memory.icon,
 #disk.icon {
-    background-color: @color6;
+  background-color: @color6;
 }
+
+#language,
 #memory,
 #disk {
-    background-color: @color14;
+  background-color: @color14;
 }
 
+#custom-updates,
 #network.wifi,
 #network {
-    background-color: @color13;
+  background-color: @color13;
 }
 
+#custom-updates.icon,
 #network.icon,
 #network.wifi-icon {
-    background-color: @color5;
+  background-color: @color5;
 }
 
+#custom-user.icon,
 #pulseaudio.icon,
 #pulseaudio.mic-icon {
-    background-color: @color3;
+  background-color: @color3;
 }
-
+#custom-user,
 #pulseaudio {
-    background-color: @color11;
+  background-color: @color11;
 }
 
+#user.icon,
 #cpu.icon,
 #temperature.icon {
-    background-color: @color2;
+  background-color: @color2;
 }
+
+#user,
 #cpu,
 #temperature {
-    background-color: @color10;
+  background-color: @color10;
 }
 
 #temperature.critical {
-    background-color: @color1;
-    color: @background;
+  background-color: @color1;
+  color: @background;
 }
-

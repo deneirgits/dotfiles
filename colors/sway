@@ -1,5 +1,5 @@
-set $wallpaper /home/deneir/Pictures/Wallpapers/wallpaper.png
-set $wallpaper2 /home/deneir/Pictures/Wallpapers/wallpaper2.png
+set $wallpaper /home/deneir/Pictures/Wallpapers/wallpaper.*
+set $wallpaper2 /home/deneir/Pictures/Wallpapers/wallpaper2.*
 
 set $background #131a21
 set $foreground #EEFFFF

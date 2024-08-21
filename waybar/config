@@ -4,14 +4,22 @@
     "height": 35,
     "spacing": 0,
     "modules-left": ["sway/window#icon","sway/window"],
-    "modules-center": ["sway/workspaces", "sway/mode"],
+    "modules-center": [
+        "sway/mode", "sway/workspaces", 
+    ],
     "modules-right": [
-        "network#wifi-icon", "network#wifi",
-        "network#icon", "network",
-        "custom/separator", "disk#icon", "disk", "memory#icon", "memory",
-        "custom/separator", "cpu#icon", "cpu", "temperature#icon", "temperature",
-        "custom/separator", "pulseaudio#icon", "pulseaudio", "pulseaudio#mic-icon", "pulseaudio#mic", 
-        "custom/separator", "clock"
+        // "network#wifi-icon", "network#wifi",
+        // "network#icon", "network",
+        // "custom/separator", "disk#icon", "disk", "memory#icon", "memory",
+        // "custom/separator", "cpu#icon", "cpu", "temperature#icon", "temperature",
+        // "custom/separator", "pulseaudio#icon", "pulseaudio", "pulseaudio#mic-icon", "pulseaudio#mic", 
+        // "custom/separator", "clock",
+        "custom/updates#icon", "custom/updates", 
+        "custom/separator", "disk#icon", "disk", 
+        // "custom/separator", "bluetooth#icon", "bluetooth",
+        "custom/separator", "user#icon", "user",
+        "custom/separator", "custom/user#icon", "custom/user",
+        "custom/separator", "clock#icon", "clock"
     ],
     "sway/workspaces": {
         "disable-scroll": true,
@@ -33,7 +41,9 @@
     "sway/mode": {
         "format": "<span>{}</span>"
     },
-
+    "clock#icon": {
+        "format": "", 
+    },
     "clock": {
         "timezone": "Asia/Manila",
         "interval": 60,
@@ -66,22 +76,22 @@
         "format-icons": ["", "", ""],
         "critical-threshold": 85,
         "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp2_input",
     },
     "temperature": {
         "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp2_input",
         "critical-threshold": 85,
         // "format-critical": "{icon} {temperatureC}°C",
         "format": "{temperatureC}°C",
     },
     "network#icon": {
-        "interface": "enp3s0",
+        "interface": "enp6s0",
         "format":"",
         "format-disconnected": "",
     },
     "network": {
-        "interface": "enp3s0",
+        "interface": "enp6s0",
         "interval": 3,
         "format-disconnected": "",
         "format": " {bandwidthDownBits}    {bandwidthUpBits}"
@@ -99,7 +109,7 @@
     },
     "pulseaudio#icon": {
         "format": "{icon}",
-        "format-bluetooth": "{icon}%",
+        "format-bluetooth": "{icon}",
         "format-bluetooth-muted": " {icon}",
         "format-muted": " ",
         "format-icons": {
@@ -131,6 +141,30 @@
     },
     "custom/separator": {
         "format": " | ",
+    },
+    "sway/language#icon": {
+        "format": "",
+    },
+    "custom/user": {
+        "format": "deneir@anduril",
+    },
+    "custom/user#icon": {
+        "format": "",
+    },
+    "custom/updates#icon": {
+        "format": "",
+    },
+    "custom/updates": {
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        // "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": "once",
+    },
+    "user#icon": {
+        "format": ""
+    },
+    "user": {
+        "format": "{work_H}:{work_M}",
     },
 },
 {
@@ -138,9 +172,28 @@
     "position": "top", // (top|bottom|left|right)
     "height": 25,
     "spacing": 0,
-    "modules-left": ["sway/window#icon", "sway/window"],
+    "modules-left": [
+        "memory#icon", "memory",
+        "custom/separator", "cpu#icon", "cpu", "temperature#icon", "temperature",
+        "custom/separator", "custom/gpu#icon", "custom/gpu", "temperature#gpu-icon", "temperature#gpu",
+        "custom/separator", "network#wifi-icon", "network#wifi",
+        "network#icon", "network",
+    ],
     "modules-center": [],
-    "modules-right": ["pulseaudio#icon", "pulseaudio", "pulseaudio#mic-icon", "pulseaudio#mic", "custom/separator", "clock"],
+    "modules-right": [
+        "pulseaudio#icon", "pulseaudio", "pulseaudio#mic-icon", "pulseaudio#mic", 
+        "custom/separator", "clock#icon", "clock"
+    ],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
     "sway/window#icon": {
         "format": "",
     },
@@ -148,15 +201,78 @@
         "format": "{}",
         "max-length": 75
     },
+    "sway/mode": {
+        "format": "<span>{}</span>"
+    },
+    "clock#icon": {
+        "format": "", 
+    },
     "clock": {
         "timezone": "Asia/Manila",
         "interval": 60,
         "format": "{:%a %e %b %I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
     },
+    "cpu#icon": {
+        "format": ""
+    },
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": false
+    },
+    "disk#icon": {
+        "format": ""
+    },
+    "disk": {
+        "interval": 60,
+        "format": "{used} ({percentage_used}%)",
+        "path": "/"
+    },
+    "memory#icon": {
+        "format": ""
+    },
+    "memory": {
+        "format": "{used:0.1f}G ({percentage}%)"
+    },
+    "temperature#icon": {
+        "format": "{icon}",
+        "format-icons": ["", "", ""],
+        "critical-threshold": 85,
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp2_input",
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp2_input",
+        "critical-threshold": 85,
+        // "format-critical": "{icon} {temperatureC}°C",
+        "format": "{temperatureC}°C",
+    },
+    "network#icon": {
+        "interface": "enp6s0",
+        "format":"",
+        "format-disconnected": "",
+    },
+    "network": {
+        "interface": "enp6s0",
+        "interval": 3,
+        "format-disconnected": "",
+        "format": " {bandwidthDownBits}    {bandwidthUpBits}"
+    },
+    "network#wifi-icon": {
+        "interface": "wlan0",
+        "format":"",
+        "format-disconnected": "",
+    },
+    "network#wifi": {
+        "interface": "wlan0",
+        "interval": 3,
+        "format-disconnected": "",
+        "format": " {bandwidthDownBits}    {bandwidthUpBits}"
+    },
     "pulseaudio#icon": {
         "format": "{icon}",
-        "format-bluetooth": "{icon}%",
+        "format-bluetooth": "{icon}",
         "format-bluetooth-muted": " {icon}",
         "format-muted": " ",
         "format-icons": {
@@ -188,5 +304,26 @@
     },
     "custom/separator": {
         "format": " | ",
+    },
+
+    "custom/gpu#icon": {
+        "format": ""
+    },
+    "custom/gpu": {
+        "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+        "format": "{}%",
+        "return-type": "",
+        "interval": 10
+    },
+    "temperature#gpu-icon": {
+        "format": "{icon}",
+        "format-icons": ["", "", ""],
+        "critical-threshold": 85,
+        "hwmon-path": "/sys/devices/pci0000:00/0000:00:01.1/0000:01:00.0/0000:02:00.0/0000:03:00.0/hwmon/hwmon1/temp2_input",
+    },
+    "temperature#gpu": {
+        "hwmon-path": "/sys/devices/pci0000:00/0000:00:01.1/0000:01:00.0/0000:02:00.0/0000:03:00.0/hwmon/hwmon1/temp2_input",
+        "critical-threshold": 85,
+        "format": "{temperatureC}°C",
     },
 }]

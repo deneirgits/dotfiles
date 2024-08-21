@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/bin:$HOME/bin:/usr/local/bin:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export CARGO="$HOME/.cargo"
+export PATH="$PYENV_ROOT/bin:$CARGO/bin:$PATH"
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export STEAM_FORCE_DESKTOPUI_SCALING=1
 eval "$(pyenv init --path)"
 
 # Path to your oh-my-zsh installation.
@@ -115,8 +118,10 @@ alias zshconfig="vim ~/.zshrc"
 alias yay="paru --skipreview --removemake --cleanafter --sudoloop"
 alias yeet="paru -Rs"
 alias rm="echo 'Use trash'"
-alias work-notes="cd ~/git-repos/notes/Work; vim ."
+alias work-notes="cd ~/git-repos/notes/Work; vim"
 alias notes="cd ~/git-repos/notes; vim ."
+alias project-notes="cd ~/git-repos/notes/Projects; vim"
+alias cam-fix="v4l2-ctl -d /dev/video0 -c exposure_dynamic_framerate=1"
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
